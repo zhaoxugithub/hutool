@@ -100,6 +100,12 @@
 					<source>${compile.version}</source>
 					<target>${compile.version}</target>
 					<compilerArgument>-Xlint:unchecked</compilerArgument>
+					<encoding>UTF-8</encoding>
+					<compilerArguments>
+						<bootclasspath>
+							${java.home}/lib/rt.jar${path.separator}${java.home}/lib/javaws.jar${path.separator}${java.home}/lib/jce.jar
+						</bootclasspath>
+					</compilerArguments>
 				</configuration>
 			</plugin>
 			<plugin>

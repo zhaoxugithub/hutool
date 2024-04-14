@@ -69,6 +69,8 @@ public class ArrayUtilTest {
 	public void cloneTest() {
 		Integer[] b = {1, 2, 3};
 		Integer[] cloneB = ArrayUtil.clone(b);
+		System.out.println(ArrayUtil.toString(b));
+		System.out.println(ArrayUtil.toString(cloneB));
 		Assert.assertArrayEquals(b, cloneB);
 
 		int[] a = {1, 2, 3};
@@ -529,7 +531,7 @@ public class ArrayUtilTest {
 	}
 
 	@Test
-	public void setOrAppendTest(){
+	public void setOrAppendTest() {
 		String[] arr = new String[0];
 		String[] newArr = ArrayUtil.setOrAppend(arr, 0, "Good");// ClassCastException
 		Assert.assertArrayEquals(new String[]{"Good"}, newArr);
