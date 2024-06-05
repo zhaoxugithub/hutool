@@ -2,6 +2,54 @@
 # 🚀Changelog
 
 -------------------------------------------------------------------------------------------------------------
+# 5.8.28(2024-05-29)
+
+### 🐣新特性
+* 【core   】      修正XmlUtil的omitXmlDeclaration描述注释（issue#I9CPC7@Gitee）
+* 【core   】      StrUtil增加toStringOrEmpty方法（issue#I9CPC7@Gitee）
+* 【extra  】      设置jsch登录认证方式，跳过Kerberos身份验证（pr#3530@Github）
+* 【extra  】      增加设置验证码大小和针对alias注释（pr#3533@Github）
+* 【json   】      JSONConfig增加setWriteLongAsString可选是否将Long写出为String类型（issue#3541@Github）
+* 【cache  】      CacheUtil.newTimedCache增加有schedulePruneDelay参数的重载方法（issue#I9HO25@Gitee）
+* 【core   】      NumberChineseFormatter提供阿拉伯转中文支持多位小数的方法（pr#3552@Github）
+* 【captcha】      Captcha.setBackground为null时背景透明（issue#3558@Github）
+* 【captcha】      HttpDownloader.downloadBytes增加超时参数重载（issue#3556@Github）
+* 【http   】      增加ExceptionFilter和DefaultExceptionFilter支持异常处理（issue#3568@Github）
+* 【poi    】      增加ExcelWriter.addIgnoredErrors，支持忽略警告小标
+* 【core   】      PropertyComparator增加compareSelf构造重载（issue#3569@Github）
+* 【db     】      增加OceanBase的driver推断（pr#1217@Gitee）
+* 【http   】      HttpRequest#get不再尝试File路径（issue#I9O6DA@Gitee）
+* 【core   】      增加IdConstants，提高Snowflake初始化性能（issue#3581@Github）
+* 【core   】      优化 CharSequenceUtil工具类 startWithAny()、startWithAnyIgnoreCase() 参数命名错误问题（pr#1219@Gitee）
+* 【core   】      ListUtil.setOrPadding增加重载，可选限制index大小（issue#3586@Github）
+* 【http   】      getFileNameFromDisposition更加规范，从多个头的值中获取，且`filename*`优先级更高（pr#3590@Gitee）
+* 【core   】      CsvWriter增加重载writeBeans方法，支持可选bean字段（pr#1222@Gitee）
+* 【core   】      LocalDateTimeUtil增加beginOfDay和endOfDay重载（issue#3594@Github）
+* 【core   】      NumberUtil.pow支持负数（issue#3598@Github）
+
+### 🐞Bug修复
+* 【http   】      修复HttpUtil.urlWithFormUrlEncoded方法重复编码问题（issue#3536@Github）
+* 【core   】      修复FileMagicNumber.getMagicNumber空指针问题（issue#I9FE8B@Gitee）
+* 【extra  】      修复CompressUtil工具多出\问题（issue#I71K5V@Gitee）
+* 【db     】      解决oracle情况下setObject(inputStream)报错问题，java.sql.SQLException: 无效的列类型问题（pr#1207@Gitee）
+* 【core   】      解决CalendarUtil.isSameDay时区不同导致结果错误问题（pr#3548@Github）
+* 【core   】      修复RandomUtil.randomStringWithoutStr方法问题（pr#1209@Gitee）
+* 【http   】      修复HttpRequest.header相同key被覆盖问题（issue#I9I61C@Gitee）
+* 【core   】      修复TemporalAccessorConverter自定义格式转换问题（issue#I9HQQE@Gitee）
+* 【cron   】      修复CronPattern.nextMatchAfter匹配初始值问题（issue#I9FQUA@Gitee）
+* 【core   】      修复FileUtil.copyFile没有创建父目录导致的问题（issue#3557@Github）
+* 【http   】      修复HttpDownloader全局超时无效问题（issue#3556@Github）
+* 【core   】      修复ZipReader.checkZipBomb遇到空目录报错问题（issue#I9K494@Gitee）
+* 【db     】      修复Oracle下特殊表名导致meta信息获取不到问题（issue#I9BANE@Gitee）
+* 【db     】      修复FuncComparator.thenComparing不生效问题（issue#3569@Github）
+* 【core   】      修复EnumUtil空指针问题（issue#I9NSZ4@Gitee）
+* 【core   】      修复NumberWordFormatter.format小数问题（issue#3579@Github）
+* 【db     】      修复JndiDSFactory空指针问题
+* 【core   】      修复BiMap.put错误的返回值（pr#1218@Gitee）
+* 【core   】      修复BooleanUtil.andOfWrap针对null错误问题（issue#3587@Github）
+* 【core   】      修复FileUtil#getTotalLines在JDK9+结果错误问题（issue#3591@Github）
+
+-------------------------------------------------------------------------------------------------------------
 # 5.8.27(2024-03-29)
 
 ### 🐣新特性

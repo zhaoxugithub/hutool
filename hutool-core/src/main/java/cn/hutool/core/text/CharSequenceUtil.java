@@ -762,8 +762,8 @@ public class CharSequenceUtil {
 			return false;
 		}
 
-		for (CharSequence suffix : prefixes) {
-			if (startWith(str, suffix, false)) {
+		for (CharSequence prefix : prefixes) {
+			if (startWith(str, prefix, false)) {
 				return true;
 			}
 		}
@@ -775,17 +775,17 @@ public class CharSequenceUtil {
 	 * 给定字符串和数组为空都返回false
 	 *
 	 * @param str      给定字符串
-	 * @param suffixes 需要检测的开始字符串
+	 * @param prefixes 需要检测的开始字符串
 	 * @return 给定字符串是否以任何一个字符串开始
 	 * @since 5.8.1
 	 */
-	public static boolean startWithAnyIgnoreCase(final CharSequence str, final CharSequence... suffixes) {
-		if (isEmpty(str) || ArrayUtil.isEmpty(suffixes)) {
+	public static boolean startWithAnyIgnoreCase(final CharSequence str, final CharSequence... prefixes) {
+		if (isEmpty(str) || ArrayUtil.isEmpty(prefixes)) {
 			return false;
 		}
 
-		for (final CharSequence suffix : suffixes) {
-			if (startWith(str, suffix, true)) {
+		for (final CharSequence prefix : prefixes) {
+			if (startWith(str, prefix, true)) {
 				return true;
 			}
 		}
@@ -978,7 +978,11 @@ public class CharSequenceUtil {
 	}
 
 	/**
-	 * 检查指定字符串中是否只包含给定的字符
+	 * 检查指定字符串中是否只包含给定的字符<br>
+	 * 这里的containsOnly并不是必须全部给定的testChars都需要有，而是一个子集。testChars是个限定集合，检查字符串中的字符是否在这个限定集合中。<br>
+	 * <pre>{@code
+	 *   StrUtil.containsOnly("asdas", 'a', 'd', 's','l');   --> true
+	 * }</pre>
 	 *
 	 * @param str       字符串
 	 * @param testChars 检查的字符
